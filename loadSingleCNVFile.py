@@ -17,7 +17,6 @@ def is_valid_file(parser, arg):
     else:
         return arg
 
-
 parser = ArgumentParser(description='Load CNV data to centeralized database.')
 parser.add_argument("-f", "--file",dest="filename",
                     type=lambda x: is_valid_file(parser, x),
@@ -31,12 +30,13 @@ parser.add_argument("-s", "--study",dest="study",
                     help="Single descriptive word to tie this sample")
 parser.add_argument("-p", "--person",dest="pi",
                     help="Single descriptive PI name to tie this sample")
+parser.add_argument("-c", "--celltype",dest="celltype",
+                    help="Germline/Somatic")
 parser.add_argument("-m", "--meta",dest="metafile",
                     type=lambda x: is_valid_file(parser, x),
                     help="Input xml file containing key value pairs of metadata. (not working)",
                     metavar="FILE")
 args = parser.parse_args()
-
 
 
 ####### Setup database connection #######
@@ -51,12 +51,15 @@ cnvSmp = db["meta"]
 base=os.path.basename(args.filename)
 sname=base.split("(")[0]
 
+
 ####### Single Sample Meta ##########
 my_Samp = {"Sample":sname}
 if args.study is not None:
     my_Samp['Study'] = args.study
 if args.pi is not None:
     my_Samp['PI'] = args.pi
+if args.pi is not None:
+    my_Samp['Celltype'] = args.celltype
 
 _id = cnvSmp.insert(loads(dumps(my_Samp)))
 
@@ -75,7 +78,6 @@ if args.ftype == 'EXON':
         my_Var["Sample"] = _id
         my_Var["SampleName"] = sname
         my_Var["varType"]="EXON"
-        #pprint(my_Var)
         cnvClc.insert(loads(dumps(my_Var)))
 
 elif args.ftype == 'SEG':
@@ -90,9 +92,7 @@ elif args.ftype == 'SEG':
         my_Var["Sample"] = _id
         my_Var["SampleName"] = sname
         my_Var["varType"]="SEG"
-        #pprint(my_Var)
         cnvClc.insert(loads(dumps(my_Var)))
-
 
 else:
     print "Uncertain File Type"
