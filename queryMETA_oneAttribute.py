@@ -45,6 +45,5 @@ print( "DatabaseID\t{}".format("\t".join(sfieldList)) )
 
 qMetaRez = cnvSmp.find({args.attribute : args.metavalue})
 for doc in qMetaRez:
-    vals = [doc[e] for e in sfieldList]
+    vals = [doc[e] if e in doc else '.' for e in sfieldList]
     print("{}\t{}".format( str(doc['_id']),"\t".join(vals) ) )
-    #pprint(vals)
