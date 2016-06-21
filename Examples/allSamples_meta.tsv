@@ -1,0 +1,25 @@
+Sample	Assay.type	Assay.name.version	DNA.type	Biospecimen.tissue.source
+s_SN10_KFR	Panel	Agilent HGV2	Germline	Blood
+s_SN11_RWM	Panel	Agilent HGV2	Germline	Blood
+s_SN12_BJR	Panel	Agilent HGV2	Germline	Blood
+s_SN13_HS	Panel	Agilent HGV2	Germline	Blood
+s_SN14_JES	Panel	Agilent HGV2	Germline	Blood
+s_SN15_CS	Panel	Agilent HGV2	Germline	Blood
+s_SN16_GS	Panel	Agilent HGV2	Germline	Blood
+s_SN17_SB	Panel	Agilent HGV2	Germline	Blood
+s_SN18_RW	Panel	Agilent HGV2	Germline	Blood
+s_SN19_KL	Panel	Agilent HGV2	Germline	Blood
+s_SN1_JW	Panel	Agilent HGV2	Germline	Blood
+s_SN20_JC	Panel	Agilent HGV2	Germline	Blood
+s_SN21_CK	Panel	Agilent HGV2	Germline	Blood
+s_SN22_CG	Panel	Agilent HGV2	Germline	Blood
+s_SN23_NS	Panel	Agilent HGV2	Somatic	Tumor
+s_SN24-AA	Panel	Agilent HGV3	Somatic	Tumor
+s_SN2_BAB	Panel	Agilent HGV4	Somatic	Tumor
+s_SN3_MLB	Panel	Agilent HGV5	Somatic	Tumor
+s_SN4_MJB	Panel	Agilent HGV6	Somatic	Tumor
+s_SN5_PGS	Panel	Agilent HGV7	Somatic	Tumor
+s_SN6_BMG	Panel	Agilent HGV8	Somatic	Tumor
+s_SN7_DGV	Panel	Agilent HGV9	Somatic	Tumor
+s_SN8_CK	Panel	Agilent HGV10	Somatic	Tumor
+s_SN9_DK	Panel	Agilent HGV11	Somatic	Tumor
