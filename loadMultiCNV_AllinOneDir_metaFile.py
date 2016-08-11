@@ -33,7 +33,7 @@ parser.add_argument("-d", "--dir",
                     dest="directory",
                     type=lambda x: is_valid_dir(parser, x),
                     help="Input directory containing CNV datafiles",
-                    metavar="FILE",required=True)
+                    metavar="DIR",required=True)
 args = parser.parse_args()
 
 

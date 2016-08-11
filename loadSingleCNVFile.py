@@ -40,7 +40,8 @@ args = parser.parse_args()
 
 
 ####### Setup database connection #######
-client = MongoClient('localhost', 27017)
+client = MongoClient('40.77.16.253', 27017)
+#client = MongoClient('localhost', 27017)
 #client = MongoClient('10.146.103.76', 27017)
 db = client["cnvDB-test"]
 cnvClc = db["cnv"]
@@ -81,7 +82,7 @@ if args.ftype == 'EXON':
         cnvClc.insert(loads(dumps(my_Var)))
 
 elif args.ftype == 'SEG':
-    sCSVHeaders = ["chr","start_pos","stop_pos","CNV_log2ratio","N_exon"]
+    sCSVHeaders = ["chr","start","end","log2ratio","N_exon"]
     for row in sCSVFile:
         row[1] = int(row[1])
         row[2] = int(row[2])
